@@ -1,0 +1,43 @@
+in escape sequence) */
+static const char *colorname[] = {
+
+  /* 8 normal colors */
+  [0] = "#291316", /* black   */
+  [1] = "#351b1e", /* red     */
+  [2] = "#4d292e", /* green   */
+  [3] = "#6d3d43", /* yellow  */
+  [4] = "#96555e", /* blue    */
+  [5] = "#bd7881", /* magenta */
+  [6] = "#d1abaf", /* cyan    */
+  [7] = "#ecdfe1", /* white   */
+
+  /* 8 bright colors */
+  [8]  = "#6e96c5", /* black   */
+  [9]  = "#70956d", /* red     */
+  [10] = "#8d7a4e", /* green   */
+  [11] = "#759794", /* yellow  */
+  [12] = "#52827e", /* blue    */
+  [13] = "#7ba6a2", /* magenta */
+  [14] = "#7b98bd", /* cyan    */
+  [15] = "#8aa8cf", /* white   */
+
+  /* special colors */
+  [256] = "#1b0b0d", /* background */
+  [257] = "#ddc3c6", /* foreground */
+};
+
+/*
+ * Default colors (colorname index)
+ * foreground, background, cursor
+ */
+static unsigned int defaultfg = 257;
+static unsigned int defaultbg = 256;
+static unsigned int defaultcs = 257;
+
+/*
+ * Colors used, when the specific fg == defaultfg. So in reverse mode this
+ * will reverse too. Another logic would only make the simple feature too
+ * complex.
+ */
+static unsigned int defaultitalic = 7;
+static unsigned int defaultunderline = 7;
