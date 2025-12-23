@@ -69,5 +69,5 @@ static const struct arg args[] = {
 	{ ram_perc, "[RAM: %s%%] ", NULL },
 	{ cpu_perc, "[CPU: %s%%] ", NULL },
 	{ battery_perc,"[BAT: %s%%] ", "BAT0" },
-	{ datetime, "[%s]",           "%F ] [ %T" }
+	{ datetime, "[%s]",           "%F ] [ %I:%M:%S %p" }
 };
