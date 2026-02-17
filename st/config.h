@@ -9,6 +9,7 @@ float alpha = 0.89;
 static char *font = "DepartureMono Nerd Font:pixelsize=14:antialias=true:autohint=true:style=Regular";
 static int borderpx = 2;
 char *xdndescchar = " !\"#$&'()*;<>?[\\]^`{|}~";
+unsigned int scrollback_lines = 2000;
 
 /*
  * What program is execed by st depends of these precedence rules:
