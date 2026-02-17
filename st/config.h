@@ -6,8 +6,9 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 float alpha = 0.89;
-static char *font = "DepartureMono Nerd Font:pixelsize=16:antialias=true:autohint=true:style=Regular";
+static char *font = "DepartureMono Nerd Font:pixelsize=14:antialias=true:autohint=true:style=Regular";
 static int borderpx = 2;
+char *xdndescchar = " !\"#$&'()*;<>?[\\]^`{|}~";
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -98,38 +99,45 @@ unsigned int tabspaces = 8;
 static const char *colorname[] = {
 
   /* 8 normal colors */
-  [0] = "#291316", 
-  [1] = "#A32F2F", /* dark-red  */
-  [2] = "#de4962", /* light red */
-  [3] = "#6d3d43", 
-  [4] = "#96555e", 
-  [5] = "#bd7881", 
-  [6] = "#d1abaf", 
-  [7] = "#ecdfe1", 
+  [0] = "#15111f", /* black   */
+  [1] = "#cf2af5", /* red     */
+  [2] = "#b19cd9", /* green   */
+  [3] = "#4b4062", /* yellow  */
+  [4] = "#6b5c8b", /* blue    */
+  [5] = "#8e82a9", /* magenta */
+  [6] = "#b6afc8", /* cyan    */
+  [7] = "#e3e1ea", /* white   */
 
   /* 8 bright colors */
-  [8]  = "#6e96c5", /* black   */
-  [9]  = "#70956d", /* red     */
-  [10] = "#8d7a4e", /* green   */
-  [11] = "#759794", /* yellow  */
-  [12] = "#52827e", /* blue    */
-  [13] = "#7ba6a2", /* magenta */
-  [14] = "#7b98bd", /* cyan    */
-  [15] = "#8aa8cf", /* white   */
+  [8]  = "#e19cbf", /* black   */
+  [9]  = "#a58574", /* red     */
+  [10] = "#83a295", /* green   */
+  [11] = "#9c8ac3", /* yellow  */
+  [12] = "#e29cc0", /* blue    */
+  [13] = "#d09a7b", /* magenta */
+  [14] = "#608d9b", /* cyan    */
+  [15] = "#d4aec1", /* white   */
 
   /* special colors */
-  [256] = "#1b0b0d", /* background */
-  [257] = "#ddc3c6", /* foreground */
+  [256] = "#0c0914", /* background */
+  [257] = "#d3d0de", /* foreground */
 };
+
 /*
  * Default colors (colorname index)
- * foreground, background, cursor, reverse cursor
+ * foreground, background, cursor
  */
 unsigned int defaultfg = 257;
 unsigned int defaultbg = 256;
 unsigned int defaultcs = 257;
 static unsigned int defaultrcs = 257;
 
+
+/*
+ * Colors used, when the specific fg == defaultfg. So in reverse mode this
+ * will reverse too. Another logic would only make the simple feature too
+ * complex.
+ */
 static unsigned int defaultitalic = 7;
 static unsigned int defaultunderline = 7;
 
