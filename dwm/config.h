@@ -65,7 +65,7 @@ static const char *firefoxcmd[]  = { "waterfox", NULL };
 static const char *pavucontrol[] = { "pavucontrol", NULL };
 static const char *brightnessUp[] = {"brightnessctl", "set", "+5%", NULL };
 static const char *brightnessDown[] = {"brightnessctl", "set", "5%-", NULL};
-static const char *screenshot[] = {"scrot", NULL};
+static const char *screenshot[] = {"scrot", "-e", "mv $f ~/Pictures/screenshots", NULL};
 static const char *pcmanfm[] = {"pcmanfm", NULL};
 
 static const Key keys[] = {
