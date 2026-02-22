@@ -67,7 +67,8 @@ static const char *brightnessUp[] = {"brightnessctl", "set", "+5%", NULL };
 static const char *brightnessDown[] = {"brightnessctl", "set", "5%-", NULL};
 static const char *screenshot[] = {"scrot", "-e", "mv $f ~/Pictures/screenshots", NULL };
 static const char *pcmanfm[] = {"pcmanfm", NULL};
-static const char *emoji[] = {"/bin/sh", "-c", "cat /home/ace/emojis/emojis.txt | dmenu -i -l 10 -fn 'Monospace-16' -nb '#000000' -nf '#9370DB' -sb '#4B0082' -sf '#ffffff' | awk '{print $1}' | tr -d '\n' | xclip -sel clip", NULL};
+static const char *emoji[] = {"/bin/sh", "-c", "cat /home/ace/emojis/emojis.txt | dmenu -i -l 10 -fn 'Monospace-14' -nb '#000000' -nf '#9370DB' -sb '#4B0082' -sf '#ffffff' | awk '{print $1}' | tr -d '\n' | xclip -sel clip", NULL};
+static const char *clipmenu[] = {"/bin/sh", "-c", "clipmenu -i -fn 'Monospace-14' -nb '#000000' -nf '#9370DB' -sb '#4B0082' -sf '#ffffff'", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -80,6 +81,7 @@ static const Key keys[] = {
 	{ 0, 	    XF86XK_MonBrightnessDown,	   spawn,	   {.v = brightnessDown } },
 	{ MODKEY, 			XK_s,	   spawn,	   {.v = screenshot } },
 	{ MODKEY,			XK_e,	   spawn,	   {.v = emoji } },
+	{ MODKEY, 			XK_c,	   spawn,	   {.v = clipmenu } },
 	{ MODKEY|ShiftMask,		XK_j,	   movestack,	   {.i = +1 }},
 	{ MODKEY|ShiftMask,		XK_k,	   movestack,	   {.i = -1 }},
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
