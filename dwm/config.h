@@ -31,7 +31,7 @@ static const Rule rules[] = {
     { "st-256color",  NULL,     NULL,  0,         0,          1,          0,         -1 },
     { NULL,	NULL, "Event Tester",  0,	  0,	      0,	  1,	     -1 },
     { NULL,	NULL, "umamusume: NN", 0,	  1,	      0,	  1,	     -1 },
-    { NULL,     NULL, "Netmarble Launcher",  0,	  1,	      0, 	  1, 	     -1 },
+/*  { NULL,     NULL, "Netmarble Launcher",  0,	  1,	      0, 	  1, 	     -1 },*/
 };
 
 /* layout(s) */
@@ -72,12 +72,15 @@ static const char *pcmanfm[] = {"pcmanfm", NULL};
 static const char *emoji[] = {"/bin/sh", "-c", "cat /home/ace/emojis/emojis.txt | dmenu -i -l 10 -fn 'Monospace-14' -nb '#000000' -nf '#9370DB' -sb '#4B0082' -sf '#ffffff' | awk '{print $1}' | tr -d '\n' | xclip -sel clip", NULL};
 static const char *clipmenu[] = {"/bin/sh", "-c", "clipmenu -i -fn 'Monospace-14' -nb '#000000' -nf '#9370DB' -sb '#4B0082' -sf '#ffffff'", NULL };
 static const char *poweroff[] = {"poweroff", NULL};
+static const char *aseprite[] = {"aseprite", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,			XK_a,	   spawn,	   {.v = aseprite } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,		XK_f,	   spawn,	   {.v = firefoxcmd } },
+	{ MODKEY|ShiftMask,		XK_w,	   fullscreen,	   {0} },
 	{ MODKEY|ShiftMask,		XK_p,	   spawn,	   {.v = pavucontrol } },
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = pcmanfm } },
 	{ MODKEY|ShiftMask,		XK_o,	   spawn,	   {.v = poweroff } },
